@@ -20,9 +20,15 @@ router.post('/post',async (req,res) =>{
 })
 
 // Get all Method
-router.get('/getAll' ,(req,res) => {
-    res.send('Get All API')
+router.get('/AllData', async (req, res) => {
+    try {
+        const data = await model.find();
+        res.json(data)
+    } catch (error) {
+        res.status(200).json({message: error.message})
+    }
 })
+
 
 // Get by ID Method
 router.get('/getOne/:id', (req,res) =>{

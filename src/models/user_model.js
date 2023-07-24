@@ -7,12 +7,12 @@ const UserModel = new mongoose.Schema({
     },
     email : {
         type:String,
-        // required : true
+        required : true
     },
     phoneNumber : {
-        type : String,
-        // required: true
+        type : Number,
+        required: true
     }
 })
 
-module.exports = mongoose.model('Data', UserModel)
+module.exports = mongoose.model('Data', UserModel);

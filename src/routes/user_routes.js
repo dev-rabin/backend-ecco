@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
-const model = require('./../models/user_model')
+const userRouter = express.Router();
+const model = require('../models/user_model')
 
 // Post Method
-router.post('/post',async (req,res) =>{
+userRouter.post('/postData',async (req,res) =>{
     // res.send('POST API')
     const data = new model({
         name : req.body.name,
@@ -20,7 +20,7 @@ router.post('/post',async (req,res) =>{
 })
 
 // Get all Method
-router.get('/AllData', async (req, res) => {
+userRouter.get('/AllData', async (req, res) => {
     try {
         const data = await model.find();
         res.json(data)
@@ -31,16 +31,21 @@ router.get('/AllData', async (req, res) => {
 
 
 // Get by ID Method
-router.get('/getOne/:id', (req,res) =>{
-    res.send('Get by ID API');
+userRouter.get('/getOne/:id', async (req,res) =>{
+    try {
+        const data = await model.findById(req.params.id);
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
 })
 
 // Update by ID Method 
-router.patch('/update/:id', (req,res) =>{
+userRouter.patch('/update/:id', (req,res) =>{
     res.send('Update by ID')
 })
 // Delte by ID 
-router.delete('/delete/:id', (req,res) =>{
+userRouter.delete('/delete/:id', (req,res) =>{
     res.send('Delete by id')
 })
-module.exports = router;
+module.exports = userRouter;

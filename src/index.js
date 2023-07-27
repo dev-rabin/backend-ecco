@@ -18,7 +18,7 @@ database.once('connected', () =>{
 })
 
 const userRouter = require('./routes/user_routes');
-app.use('/api', userRouter)
+app.use('/api/user', userRouter)
 
 app.listen(3000, () => {
     console.log(`server started at ${3000}`);

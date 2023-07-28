@@ -16,12 +16,17 @@ database.on('error',(error)=>{
 database.once('connected', () =>{
     console.log('Database Connected');
 })
-
+// User Router
 const userRouter = require('./routes/user_routes');
 app.use('/api/user', userRouter);
 
+// Product Category Router
 const categoryRouter = require('./routes/category_routes');
 app.use('/api/category', categoryRouter);
+
+// Products Router
+const productRouter = require('./routes/products_routes');
+app.use('/api/products', productRouter);
 
 app.listen(3000, () => {
     console.log(`server started at ${3000}`);

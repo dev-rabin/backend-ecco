@@ -28,6 +28,10 @@ app.use('/api/category', categoryRouter);
 const productRouter = require('./routes/products_routes');
 app.use('/api/products', productRouter);
 
+// Cart Router
+const cartRouter = require('./routes/cart_routes');
+app.use('/api/cart', cartRouter)
+
 app.listen(3000, () => {
     console.log(`server started at ${3000}`);
 })

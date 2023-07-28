@@ -60,4 +60,4 @@ userSchema.pre(['update', 'findOneAndUpdate', 'updateOne'], function (next) {
 
 });
 
-module.exports = mongoose.model('Data', userSchema);
+module.exports = mongoose.model('User', userSchema);

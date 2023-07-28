@@ -48,6 +48,17 @@ const UserController = {
         } catch (error) {
             res.json({success: false, message: error.message})
         }
+    },
+
+    fetchAllUsers : async(req, res) => {
+
+        try {
+            const getUsers = await userModel.find();
+            res.json({success:true, data: getUsers})
+        } catch (error) {
+            res.json({success: false, message: error.message})
+        }
+
     }
 }
 

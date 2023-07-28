@@ -5,6 +5,7 @@ const UserController = require('./../controllers/user_controller')
 // Post Method
 userRouter.post('/createAccount',UserController.createAccount);
 userRouter.post('/signin', UserController.signIn);
+userRouter.get('/', UserController.fetchAllUsers);
 // Get all Method
 // userRouter.get('/AllData', async (req, res) => {
 //     try {

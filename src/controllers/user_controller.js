@@ -44,8 +44,9 @@ const UserController = {
             }
 
             return res.json({ success: true, message: 'Signin Successfully!' })
+        
         } catch (error) {
-            res.json({success: false,data: userMatched, message: error.message})
+            res.json({success: false, message: error.message})
         }
     }
 }

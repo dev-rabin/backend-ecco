@@ -5,6 +5,7 @@ const mongoose = require ('mongoose');
 const app = express();
 
 app.use(express.json());
+
 const mongoDbApi = "mongodb+srv://robinmandhotia:Robin123@rabincluster.ukgzcqb.mongodb.net/ecommerce?retryWrites=true&w=majority"
 
 mongoose.connect(mongoDbApi);

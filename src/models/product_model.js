@@ -26,5 +26,5 @@ productSchema.pre(['update','findOneAndUpdate', 'updateOne'], function (next) {
     next();
 })
 
-const ProductModel = model('Products', productSchema);
+const ProductModel = model('Product', productSchema);
 module.exports = ProductModel

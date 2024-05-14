@@ -1,9 +1,12 @@
 require('dotenv').config();
 const express = require ('express');
 const mongoose = require ('mongoose');
+const port = 3001;
+const cors = require("cors")
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 const mongoDbApi = "mongodb+srv://robinmandhotia:Robin123@rabincluster.ukgzcqb.mongodb.net/ecommerce?retryWrites=true&w=majority"
@@ -38,6 +41,6 @@ const orderRoutes = require('./routes/order_routes');
 app.use('/api/order', orderRoutes);
 
 
-app.listen(3000, () => {
-    console.log(`server started at ${3000}`);
+app.listen(port, () => {
+    console.log(`server started at ${port}`);
 })

@@ -1,6 +1,7 @@
 const { json } = require('express');
 const ProductModel = require('./../models/product_model')
 const ProductController = {
+
     createProduct: async (req, res) => {
         try {
             const productData = req.body;
@@ -15,6 +16,7 @@ const ProductController = {
     fetchProducts: async (req, res) => {
         try {
             const products = await ProductModel.find();
+            console.log("products : ",products);
             res.json({ success: true, data: products })
         } catch (error) {
             res, json({ success: false, message: error.message })

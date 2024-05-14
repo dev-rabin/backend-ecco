@@ -15,7 +15,6 @@ const CartController = {
         } catch (error) {
             res.json({ success: false, message: error.message })
         }
-
     },
     addToCart: async function (req, res) {
         try {
